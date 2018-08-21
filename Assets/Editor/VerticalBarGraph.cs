@@ -5,18 +5,18 @@ using UnityEditor;
 
 namespace Assets.Editor
 {
-    public class BarGraph : EditorWindow
+    public class VerticalBarGraph : EditorWindow
     {
-        static BarGraph _window;
+        static VerticalBarGraph _window;
 
-        [MenuItem("Window/Graphs/BarGraph")]
+        [MenuItem("Window/Graphs/VerticalBarGraph")]
         static void Open()
         {
             if (_window == null)
             {
-                _window = CreateInstance<BarGraph>();
+                _window = CreateInstance<VerticalBarGraph>();
             }
-            _window.titleContent.text = "BarGraph";
+            _window.titleContent.text = "VerticalBarGraph";
             _window.Show();
         }
 
