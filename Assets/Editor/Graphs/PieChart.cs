@@ -33,18 +33,16 @@ namespace Assets.Editor.Graphs
             Handles.color = Color.white;
 
             var centerPos = new Vector3(area.center.x, area.center.y);
-            Handles.DrawWireDisc(centerPos, new Vector3(0f, 0f, 1f), radius);
             Handles.DrawSolidArc(centerPos, Vector3.forward, Vector3.down, (Mathf.Cos(Time.realtimeSinceStartup) - 1) * -180f, radius);
+            Handles.DrawWireDisc(centerPos, new Vector3(0f, 0f, 1f), radius);
 
             var leftPos = new Vector3(area.center.x - (space + radius * 2), area.center.y);
-            Handles.DrawWireDisc(leftPos, new Vector3(0f, 0f, 1f), radius);
             Handles.DrawSolidArc(leftPos, Vector3.forward, Vector3.down, (Mathf.Sin(Time.realtimeSinceStartup) - 1) * -180f, radius);
+            Handles.DrawWireDisc(leftPos, new Vector3(0f, 0f, 1f), radius);
 
             var rightPos = new Vector3(area.center.x + (space + radius * 2), area.center.y);
+            Handles.DrawSolidArc(rightPos, Vector3.forward, Vector3.down, (Mathf.Sin(Time.realtimeSinceStartup / 2) - 1) * -180f,radius);
             Handles.DrawWireDisc(rightPos, new Vector3(0f, 0f, 1f), radius);
-            Handles.DrawSolidArc(rightPos, Vector3.forward, Vector3.down, (Mathf.Sin(Time.realtimeSinceStartup / 2) - 1) * -180f,
-                radius);
-
         }
     }
 }
