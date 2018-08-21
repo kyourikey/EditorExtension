@@ -27,18 +27,8 @@ namespace Assets.Editor.Graphs
         void OnGUI()
         {
             var area = GUILayoutUtility.GetRect(Screen.width, Screen.height);
-            var radius = 1f;
-            var space = 1f;
-            if (Screen.width > Screen.height)
-            {
-                radius = Screen.height / 8f;
-                space = Screen.height / 20f;
-            }
-            else
-            {
-                radius = Screen.width / 8f;
-                space = Screen.width / 20f;
-            }
+            var radius = Screen.width > Screen.height ? Screen.height / 8f : Screen.width / 8f;
+            var space = Screen.width > Screen.height ? Screen.height / 20f : Screen.width / 20f;
 
             Handles.color = Color.white;
 
