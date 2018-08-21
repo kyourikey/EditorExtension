@@ -23,7 +23,6 @@ namespace Assets.Editor
         void Update()
         {
             Repaint();
-
         }
 
         void OnGUI()
