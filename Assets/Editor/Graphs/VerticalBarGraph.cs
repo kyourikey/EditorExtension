@@ -44,9 +44,9 @@ namespace Assets.Editor.Graphs
 
             var barHeights = new float[]
             {
-                (Mathf.Sin(Time.time)/2+0.5f)*frameHeight,
-                (Mathf.Cos(Time.time)/2+0.5f)*frameHeight,
-                (Mathf.Sin(Time.time*2)/2+0.5f)*frameHeight,
+                (Mathf.Sin(Time.realtimeSinceStartup)/2+0.5f)*frameHeight,
+                (Mathf.Cos(Time.realtimeSinceStartup)/2+0.5f)*frameHeight,
+                (Mathf.Sin(Time.realtimeSinceStartup*2)/2+0.5f)*frameHeight,
             };
 
             for (var i = 0; i < barPositions.Length; i++)

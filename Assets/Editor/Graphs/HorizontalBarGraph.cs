@@ -36,9 +36,9 @@ namespace Assets.Editor.Graphs
 
             var gaugeWidths = new float[]
             {
-                (frameWidth - gaugeSpace) * Mathf.Clamp01((Mathf.Sin(Time.time)+1)/2),
-                (frameWidth - gaugeSpace) * Mathf.Clamp01((Mathf.Cos(Time.time)+1)/2),
-                (frameWidth - gaugeSpace) * Mathf.Clamp01((Mathf.Sin(Time.time*2)+1)/2),
+                (frameWidth - gaugeSpace) * Mathf.Clamp01((Mathf.Sin(Time.realtimeSinceStartup)+1)/2),
+                (frameWidth - gaugeSpace) * Mathf.Clamp01((Mathf.Cos(Time.realtimeSinceStartup)+1)/2),
+                (frameWidth - gaugeSpace) * Mathf.Clamp01((Mathf.Sin(Time.realtimeSinceStartup*2)+1)/2),
             };
             var gaugeHeight = frameHeight - gaugeSpace;
 
