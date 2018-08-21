@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections;
+﻿using UnityEditor;
 using UnityEngine;
-using UnityEditor;
 
-namespace Assets.Editor
+namespace Assets.Editor.Graphs
 {
     public class VerticalBarGraph : EditorWindow
     {

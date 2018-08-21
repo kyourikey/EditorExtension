@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEditor;
 using UnityEngine;
-using UnityEditor;
 
-namespace Assets.Editor
+namespace Assets.Editor.Graphs
 {
     public class PieChart : EditorWindow
     {

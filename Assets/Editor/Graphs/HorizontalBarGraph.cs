@@ -1,10 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEditor;
 using UnityEngine;
-using UnityEditor;
-using UnityEngine.Assertions.Must;
 
-namespace Assets.Editor
+namespace Assets.Editor.Graphs
 {
     public class HorizontalBarGraph : EditorWindow
     {
