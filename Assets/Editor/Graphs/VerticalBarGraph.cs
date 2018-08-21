@@ -33,7 +33,7 @@ namespace Assets.Editor.Graphs
 
             var barWidthOffset = 10f;
             var barWidth = frameWidth - barWidthOffset;
-            
+
             // bar -----------------------------------
             var barPositions = new Vector2[]
             {
@@ -48,24 +48,24 @@ namespace Assets.Editor.Graphs
                 (Mathf.Cos(Time.time)/2+0.5f)*frameHeight,
                 (Mathf.Sin(Time.time*2)/2+0.5f)*frameHeight,
             };
-            
+
             for (var i = 0; i < barPositions.Length; i++)
             {
                 var barPosition = barPositions[i];
                 var barSize = new Vector2(barWidth, barHeights[i]);
 
                 barPosition.y -= barSize.y / 2;
-                
-                if(barHeights[i] >  (frameHeight/3))
+
+                if (barHeights[i] > (frameHeight / 3))
                     Handles.color = Color.green;
-                else if(barHeights[i] > (frameHeight / 5))
+                else if (barHeights[i] > (frameHeight / 5))
                     Handles.color = Color.yellow;
                 else
                     Handles.color = Color.red;
 
                 Handles.DrawWireCube(barPosition, barSize);
             }
-            
+
             // frame -----------------------------------
             var framePositions = new Vector2[]
             {
