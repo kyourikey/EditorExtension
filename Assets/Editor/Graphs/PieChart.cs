@@ -5,7 +5,7 @@ namespace Assets.Editor.Graphs
 {
     public class PieChart : EditorWindow
     {
-        static PieChart _window;
+        private static PieChart _window;
 
         [MenuItem("Window/Graphs/PieChart")]
         static void Open()

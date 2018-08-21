@@ -5,7 +5,7 @@ namespace Assets.Editor.Graphs
 {
     public class HorizontalBarGraph : EditorWindow
     {
-        static HorizontalBarGraph _window;
+        private static HorizontalBarGraph _window;
 
         [MenuItem("Window/Graphs/HorizontalBarGraph")]
         static void Open()
