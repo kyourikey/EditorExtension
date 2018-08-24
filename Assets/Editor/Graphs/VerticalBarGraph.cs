@@ -34,7 +34,6 @@ namespace Assets.Editor.Graphs
             var barWidthOffset = 10f;
             var barWidth = frameWidth - barWidthOffset;
 
-            // bar -----------------------------------
             var barPositions = new Vector2[]
             {
                 new Vector2(area.center.x-(space+frameWidth), area.center.y + (frameHeight/2)),
@@ -49,6 +48,18 @@ namespace Assets.Editor.Graphs
                 (Mathf.Sin(Time.realtimeSinceStartup*2)/2+0.5f)*frameHeight,
             };
 
+            var backgroundPos = new Vector3[]
+            {
+                new Vector3(area.x, area.y, 0f),
+                new Vector3(area.x + area.width, area.y, 0f),
+                new Vector3(area.x + area.width, area.y + area.height, 0f),
+                new Vector3(area.x, area.y + area.height, 0f),
+            };
+
+            // background ----------------------------
+            Handles.DrawSolidRectangleWithOutline(backgroundPos, Color.black, Color.black);
+
+            // bar -----------------------------------
             for (var i = 0; i < barPositions.Length; i++)
             {
                 var barPosition = barPositions[i];

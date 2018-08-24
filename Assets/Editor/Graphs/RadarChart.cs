@@ -85,6 +85,17 @@ namespace Assets.Editor.Graphs
                 area.center, basePolygonPositions[5],
             };
 
+            var backgroundPos = new Vector3[]
+            {
+                new Vector3(area.x, area.y, 0f),
+                new Vector3(area.x + area.width, area.y, 0f),
+                new Vector3(area.x + area.width, area.y + area.height, 0f),
+                new Vector3(area.x, area.y + area.height, 0f),
+            };
+
+            // background
+            Handles.DrawSolidRectangleWithOutline(backgroundPos, Color.black, Color.black);
+            
             // polygon background color
             for (var i = 0; i < scoreLinePositions.Length - 1; i++)
             {

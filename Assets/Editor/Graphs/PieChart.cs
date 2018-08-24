@@ -30,6 +30,18 @@ namespace Assets.Editor.Graphs
             var radius = Screen.width > Screen.height ? Screen.height / 8f : Screen.width / 8f;
             var space = Screen.width > Screen.height ? Screen.height / 20f : Screen.width / 20f;
 
+            var backgroundPos = new Vector3[]
+            {
+                new Vector3(area.x, area.y, 0f),
+                new Vector3(area.x + area.width, area.y, 0f),
+                new Vector3(area.x + area.width, area.y + area.height, 0f),
+                new Vector3(area.x, area.y + area.height, 0f),
+            };
+
+            // background ----------------------------
+            Handles.DrawSolidRectangleWithOutline(backgroundPos, Color.black, Color.black);
+
+            // chart ---------------------------------
             Handles.color = Color.white;
 
             var centerPos = new Vector3(area.center.x, area.center.y);

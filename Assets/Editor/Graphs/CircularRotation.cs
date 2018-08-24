@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEditor;
 
 
@@ -45,10 +43,21 @@ namespace Assets.Editor.Graphs
 
             var insideDottedLineSpace = area.width > area.height ? area.height / 2.5f : area.width / 2.5f;
             var insideDottedLineRadius = area.width > area.height ? area.center.y - insideDottedLineSpace : area.center.x - insideDottedLineSpace;
+            
+            var backgroundPos = new Vector3[]
+            {
+                new Vector3(area.x, area.y, 0f),
+                new Vector3(area.x + area.width, area.y, 0f),
+                new Vector3(area.x + area.width, area.y + area.height, 0f),
+                new Vector3(area.x, area.y + area.height, 0f),
+            };
 
-            // background
-            Handles.color = Color.black;
-            Handles.DrawSolidDisc(area.center, Vector3.forward, backgroundRadius);
+            // background 
+            Handles.DrawSolidRectangleWithOutline(backgroundPos, Color.black, Color.black);
+
+            // background円だけ
+            //Handles.color = Color.black;
+            //Handles.DrawSolidDisc(area.center, Vector3.forward, backgroundRadius);
 
             // frame
             Handles.color = Color.white;

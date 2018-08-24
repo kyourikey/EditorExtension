@@ -39,7 +39,20 @@ namespace Assets.Editor.Graphs
                 (frameWidth - gaugeSpace) * Mathf.Clamp01((Mathf.Cos(Time.realtimeSinceStartup)+1)/2),
                 (frameWidth - gaugeSpace) * Mathf.Clamp01((Mathf.Sin(Time.realtimeSinceStartup*2)+1)/2),
             };
+
             var gaugeHeight = frameHeight - gaugeSpace;
+
+
+            var backgroundPos = new Vector3[]
+            {
+                new Vector3(area.x, area.y, 0f),
+                new Vector3(area.x + area.width, area.y, 0f),
+                new Vector3(area.x + area.width, area.y + area.height, 0f),
+                new Vector3(area.x, area.y + area.height, 0f),
+            };
+
+            // background ----------------------------
+            Handles.DrawSolidRectangleWithOutline(backgroundPos, Color.black, Color.black);
 
             //gauge -------------------------------------
             for (var i = 0; i < 3; i++)
