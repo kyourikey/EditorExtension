@@ -27,7 +27,6 @@ namespace Assets.Editor.Graphs
         void OnGUI()
         {
             var area = GUILayoutUtility.GetRect(Screen.width, Screen.height);
-            var frameSpacing = 10f;
             var frameWidth = area.width / 1.1f;
             var frameHeight = area.height / 5f;
             var slope = 10f;
