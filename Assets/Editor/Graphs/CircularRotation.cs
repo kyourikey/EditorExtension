@@ -8,7 +8,6 @@ namespace Assets.Editor.Graphs
 {
     public class CircularRotation : EditorWindow
     {
-
         private static CircularRotation _window;
 
         [MenuItem("Window/Graphs/CircularRotation")]
