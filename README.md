@@ -18,3 +18,6 @@ Unity Editor 拡張
 
 ### RadarChart.cs
 ![RadarChart](https://raw.githubusercontent.com/kyourikey/EditorExtension/master/SampleGif/Graphs/RadarChart.gif)
+
+### SearchSomething.cs
+![SearchSomething](https://raw.githubusercontent.com/kyourikey/EditorExtension/master/SampleGif/Graphs/SearchSomething.gif)
