@@ -21,3 +21,7 @@ Unity Editor 拡張
 
 ### SearchSomething.cs
 ![SearchSomething](https://raw.githubusercontent.com/kyourikey/EditorExtension/master/SampleGif/Graphs/SearchSomething.gif)
+
+
+### SearchRoute.cs
+![SearchRoute](https://raw.githubusercontent.com/kyourikey/EditorExtension/master/SampleGif/Graphs/SearchRoute.gif)
