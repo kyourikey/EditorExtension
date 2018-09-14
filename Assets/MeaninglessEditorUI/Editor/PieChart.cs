@@ -1,13 +1,18 @@
-﻿using UnityEditor;
+﻿//------------------------------
+// Meaningless editor UI
+// © 2018 key-assets
+//------------------------------
+
+using UnityEditor;
 using UnityEngine;
 
-namespace Assets.Editor.Graphs
+namespace MeaninglessEditorUI
 {
     public class PieChart : EditorWindow
     {
         private static PieChart _window;
 
-        [MenuItem("Window/Graphs/PieChart")]
+        [MenuItem("Tools/MeaninglessEditorUI/PieChart", false, 21)]
         static void Open()
         {
             if (_window == null)
@@ -27,6 +32,7 @@ namespace Assets.Editor.Graphs
         void OnGUI()
         {
             var area = GUILayoutUtility.GetRect(Screen.width, Screen.height);
+
             var radius = Screen.width > Screen.height ? Screen.height / 8f : Screen.width / 8f;
             var space = Screen.width > Screen.height ? Screen.height / 20f : Screen.width / 20f;
 
@@ -53,7 +59,7 @@ namespace Assets.Editor.Graphs
             Handles.DrawWireDisc(leftPos, new Vector3(0f, 0f, 1f), radius);
 
             var rightPos = new Vector3(area.center.x + (space + radius * 2), area.center.y);
-            Handles.DrawSolidArc(rightPos, Vector3.forward, Vector3.down, (Mathf.Sin(Time.realtimeSinceStartup / 2) - 1) * -180f,radius);
+            Handles.DrawSolidArc(rightPos, Vector3.forward, Vector3.down, (Mathf.Sin(Time.realtimeSinceStartup / 2) - 1) * -180f, radius);
             Handles.DrawWireDisc(rightPos, new Vector3(0f, 0f, 1f), radius);
         }
     }

@@ -1,14 +1,18 @@
-﻿using UnityEngine;
+﻿//------------------------------
+// Meaningless editor UI
+// © 2018 key-assets
+//------------------------------
+
+using UnityEngine;
 using UnityEditor;
 
-
-namespace Assets.Editor.Graphs
+namespace MeaninglessEditorUI
 {
     public class CircularRotation : EditorWindow
     {
         private static CircularRotation _window;
 
-        [MenuItem("Window/Graphs/CircularRotation")]
+        [MenuItem("Tools/MeaninglessEditorUI/CircularRotation", false, 22)]
         static void Open()
         {
             if (_window == null)
@@ -43,7 +47,7 @@ namespace Assets.Editor.Graphs
 
             var insideDottedLineSpace = area.width > area.height ? area.height / 2.5f : area.width / 2.5f;
             var insideDottedLineRadius = area.width > area.height ? area.center.y - insideDottedLineSpace : area.center.x - insideDottedLineSpace;
-            
+
             var backgroundPos = new Vector3[]
             {
                 new Vector3(area.x, area.y, 0f),
@@ -54,11 +58,7 @@ namespace Assets.Editor.Graphs
 
             // background 
             Handles.DrawSolidRectangleWithOutline(backgroundPos, Color.black, Color.black);
-
-            // background円だけ
-            //Handles.color = Color.black;
-            //Handles.DrawSolidDisc(area.center, Vector3.forward, backgroundRadius);
-
+            
             // frame
             Handles.color = Color.white;
             Handles.DrawWireDisc(area.center, new Vector3(0f, 0f, 1f), backgroundRadius);

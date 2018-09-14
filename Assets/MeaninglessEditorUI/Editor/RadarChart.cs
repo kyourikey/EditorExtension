@@ -1,17 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿//------------------------------
+// Meaningless editor UI
+// © 2018 key-assets
+//------------------------------
+
 using UnityEngine;
 using UnityEditor;
-using UnityEngine.Assertions.Comparers;
-using UnityEngine.Assertions.Must;
 
-namespace Assets.Editor.Graphs
+namespace MeaninglessEditorUI
 {
     public class RadarChart : EditorWindow
     {
         private static RadarChart _window;
 
-        [MenuItem("Window/Graphs/RadarChart")]
+        [MenuItem("Tools/MeaninglessEditorUI/RadarChart", false, 61)]
         static void Open()
         {
             if (_window == null)
@@ -33,7 +34,7 @@ namespace Assets.Editor.Graphs
             var area = GUILayoutUtility.GetRect(Screen.width, Screen.height);
 
             var graphSize = area.width > area.height ? area.height / 3 : area.width / 3; ;
-            var graphShape = 6;
+            const int graphShape = 6;
 
             var scorePositions = new Vector3[]
             {
@@ -95,7 +96,7 @@ namespace Assets.Editor.Graphs
 
             // background
             Handles.DrawSolidRectangleWithOutline(backgroundPos, Color.black, Color.black);
-            
+
             // polygon background color
             for (var i = 0; i < scoreLinePositions.Length - 1; i++)
             {
@@ -121,14 +122,12 @@ namespace Assets.Editor.Graphs
             var dotRadius = area.width > area.height ? area.height / 50 : area.width / 50;
 
             Handles.color = Color.white;
-            for (var i = 0; i < scorePositions.Length; i++)
+            foreach (var pos in scorePositions)
             {
-                Handles.DrawSolidDisc(scorePositions[i], new Vector3(0f, 0f, 1f), dotRadius);
+                Handles.DrawSolidDisc(pos, new Vector3(0f, 0f, 1f), dotRadius);
             }
         }
 
-        // Base is here
-        // http://rick08.hatenablog.com/entry/2013/07/24/082842
         private Vector2 GetPolygonPosition(int angleCount, int shapeTypeNum, float radius)
         {
             var x = radius * Mathf.Cos(2 * angleCount * Mathf.PI / shapeTypeNum - Mathf.PI / 2);

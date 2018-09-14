@@ -1,13 +1,18 @@
-﻿using UnityEditor;
+﻿//------------------------------
+// Meaningless editor UI
+// © 2018 key-assets
+//------------------------------
+
+using UnityEditor;
 using UnityEngine;
 
-namespace Assets.Editor.Graphs
+namespace MeaninglessEditorUI
 {
     public class VerticalBarGraph : EditorWindow
     {
         private static VerticalBarGraph _window;
 
-        [MenuItem("Window/Graphs/VerticalBarGraph")]
+        [MenuItem("Tools/MeaninglessEditorUI/VerticalBarGraph", false, 1)]
         static void Open()
         {
             if (_window == null)
@@ -26,6 +31,7 @@ namespace Assets.Editor.Graphs
         void OnGUI()
         {
             var area = GUILayoutUtility.GetRect(Screen.width, Screen.height);
+
             var frameWidth = Screen.width / 6;
             var frameHeight = Screen.height - Screen.height / 5;
             var frameSize = new Vector2(frameWidth, frameHeight);

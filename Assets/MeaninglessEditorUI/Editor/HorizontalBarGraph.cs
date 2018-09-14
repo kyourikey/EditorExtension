@@ -1,13 +1,18 @@
-﻿using UnityEditor;
+﻿//------------------------------
+// Meaningless editor UI
+// © 2018 key-assets
+//------------------------------
+
+using UnityEditor;
 using UnityEngine;
 
-namespace Assets.Editor.Graphs
+namespace MeaninglessEditorUI
 {
     public class HorizontalBarGraph : EditorWindow
     {
         private static HorizontalBarGraph _window;
 
-        [MenuItem("Window/Graphs/HorizontalBarGraph")]
+        [MenuItem("Tools/MeaninglessEditorUI/HorizontalBarGraph", false, 2)]
         static void Open()
         {
             if (_window == null)
@@ -27,6 +32,7 @@ namespace Assets.Editor.Graphs
         void OnGUI()
         {
             var area = GUILayoutUtility.GetRect(Screen.width, Screen.height);
+
             var frameWidth = area.width / 1.1f;
             var frameHeight = area.height / 5f;
             var slope = 10f;
@@ -39,9 +45,7 @@ namespace Assets.Editor.Graphs
                 (frameWidth - gaugeSpace) * Mathf.Clamp01((Mathf.Cos(Time.realtimeSinceStartup)+1)/2),
                 (frameWidth - gaugeSpace) * Mathf.Clamp01((Mathf.Sin(Time.realtimeSinceStartup*2)+1)/2),
             };
-
             var gaugeHeight = frameHeight - gaugeSpace;
-
 
             var backgroundPos = new Vector3[]
             {
@@ -65,7 +69,7 @@ namespace Assets.Editor.Graphs
                     new Vector3(gaugeWidths[i], gaugeHeight+plusHeight, 0f),
                     new Vector3(gaugeWidths[i]+slope, gaugeSpace+plusHeight, 0f),
                 };
-                Handles.DrawSolidRectangleWithOutline(gaugePos, new Color(1f, 1f, 1f, 1f), new Color(0f, 0f, 0f, 1f));
+                Handles.DrawSolidRectangleWithOutline(gaugePos, Color.white, Color.black);
             }
 
             //frame -------------------------------------
@@ -81,7 +85,7 @@ namespace Assets.Editor.Graphs
                     new Vector3(frameWidth + slope, plusHeight, 0f),
                 };
 
-                Handles.DrawSolidRectangleWithOutline(rectPos, new Color(1f, 1f, 1f, 0f), new Color(1f, 1f, 1f, 1f));
+                Handles.DrawSolidRectangleWithOutline(rectPos, new Color(1f, 1f, 1f, 0f), Color.white);
             }
         }
     }

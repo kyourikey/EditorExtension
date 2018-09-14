@@ -1,16 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Security;
+﻿//------------------------------
+// Meaningless editor UI
+// © 2018 key-assets
+//------------------------------
+
 using UnityEngine;
 using UnityEditor;
 
-namespace Assets.Editor.Graphs
+namespace MeaninglessEditorUI
 {
     public class SearchSomething : EditorWindow
     {
         private static SearchSomething _window;
 
-        [MenuItem("Window/Graphs/SearchSomething")]
+        [MenuItem("Tools/MeaninglessEditorUI/SearchSomething", false, 41)]
         static void Open()
         {
             if (_window == null)
@@ -32,8 +34,7 @@ namespace Assets.Editor.Graphs
             var area = GUILayoutUtility.GetRect(Screen.width, Screen.height);
 
             var searchPos = new Vector3(area.center.x + Mathf.Sin(Time.realtimeSinceStartup / 4f) * area.width / 3f,
-                area.center.y + Mathf.Sin(Time.realtimeSinceStartup / 2f) * area.height / 3f,
-                0f);
+                area.center.y + Mathf.Sin(Time.realtimeSinceStartup / 2f) * area.height / 3f, 0f);
 
             var reticleSize = area.width > area.height ? area.height / 8f : area.width / 8f;
 
