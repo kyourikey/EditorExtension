@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿//------------------------------
+// Meaningless editor UI
+// © 2018 key-assets
+//------------------------------
+
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
@@ -9,7 +13,7 @@ namespace Assets.Editor.Graphs
     {
         private static SearchRoute _window;
 
-        [MenuItem("Window/Graphs/SearchRoute")]
+        [MenuItem("Tools/MeaninglessEditorUI/SearchRoute", false, 42)]
         static void Open()
         {
             if (_window == null)
@@ -48,7 +52,6 @@ namespace Assets.Editor.Graphs
             {
                 for (var j = 1; j < 10; j++)
                 {
-
                     linePositions.Add(new Vector2(spaceWidth * j, spaceHeight * i));
                 }
             }
@@ -70,7 +73,6 @@ namespace Assets.Editor.Graphs
                         {
                             Handles.DrawLine(linePositions[i], linePositions[i + 9]);
                         }
-
                         break;
                     case 1:
                         if (0 < i - 10)
@@ -78,7 +80,6 @@ namespace Assets.Editor.Graphs
                             Handles.DrawLine(linePositions[i], linePositions[i - 9]);
                             Handles.DrawWireCube(linePositions[i], Vector2.one * squareSize);
                         }
-
                         break;
                     case 2:
                         if (linePositions.Count > i + 1 &&
@@ -86,7 +87,6 @@ namespace Assets.Editor.Graphs
                         {
                             Handles.DrawLine(linePositions[i], linePositions[i + 1]);
                         }
-
                         break;
                     case 3:
                         if (0 < i - 1 &&
@@ -94,7 +94,6 @@ namespace Assets.Editor.Graphs
                         {
                             Handles.DrawLine(linePositions[i], linePositions[i - 1]);
                         }
-
                         break;
                 }
                 Handles.DrawSolidDisc(linePositions[i], Vector3.forward, dotSize);
