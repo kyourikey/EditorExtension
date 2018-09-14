@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-namespace Assets.Editor.Graphs
+namespace MeaninglessEditorUI
 {
     public class SearchRoute : EditorWindow
     {
