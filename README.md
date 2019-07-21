@@ -1,6 +1,10 @@
 # Unity Editor Extension
 Unity Editor 拡張
 
+* アセットストアでも公開中です。
+* It is also available on the asset store.
+* https://assetstore.unity.com/packages/tools/utilities/meaningless-editor-ui-128527
+
 ---
 ## Graphs
 
