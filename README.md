@@ -1,9 +1,14 @@
 # Unity Editor Extension
 Unity Editor 拡張
 
+### ドネート
 * アセットストアでも公開中です。
 * It is also available on the asset store.
 * https://assetstore.unity.com/packages/tools/utilities/meaningless-editor-ui-128527
+
+### 解説記事
+* Qiitaでまとめています。
+* https://qiita.com/kyourikey/items/7a5f693d1fe17bde5387
 
 ---
 ## Graphs
